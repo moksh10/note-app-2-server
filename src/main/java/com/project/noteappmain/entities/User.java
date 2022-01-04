@@ -42,15 +42,21 @@ public class User {
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private String password;
 	
+	@Column(name="user_name")
+	@NotEmpty(message = "Username cannot be empty")
+	@Size(max=200,message = "Username length exceeded: 200")
+	private String userName;
+	
 	@OneToMany(mappedBy = "user",fetch = FetchType.LAZY,cascade = CascadeType.ALL,orphanRemoval = true)
 	private List<Note> notes;
 
 	public User() {
 		
 	}
-	public User(String email, String password) {
+	public User(String email, String password,String userName) {
 		this.email = email;
 		this.password = password;
+		this.userName = userName; 
 	}
 
 	public int getUserId() {
@@ -78,6 +84,12 @@ public class User {
 		this.password = password;
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 	public List<Note> getNotes() {
 		return notes;
 	}
