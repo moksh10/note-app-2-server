@@ -1,9 +1,12 @@
 package com.project.noteappmain.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 public class SuccessMessage {
 	private String message;
 	private boolean success;
+	@JsonInclude(Include.NON_NULL)
 	private Object data;
 
 	public SuccessMessage(String message,boolean success) {
