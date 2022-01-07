@@ -24,6 +24,7 @@ import com.project.noteappmain.services.UserDetailsService;
 import com.project.noteappmain.util.JwtUtil;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000",allowCredentials = "true")
 public class AuthController {
 
 	@Autowired
