@@ -24,7 +24,7 @@ import com.project.noteappmain.services.UserDetailsService;
 import com.project.noteappmain.util.JwtUtil;
 
 @RestController
-@CrossOrigin(origins = "https://note-dusk.web.app/",allowCredentials = "true")
+@CrossOrigin(origins = "*",allowCredentials = "true")
 public class AuthController {
 
 	@Autowired
@@ -36,8 +36,11 @@ public class AuthController {
 	@Autowired
 	private UserDetailsService userDetailsService;
 
-	
-
+	@GetMapping("/test")
+	public ResponseEntity<?> ds()
+	{
+		return ResponseEntity.ok("tested");
+	}
 	@PostMapping("/auth")
 	public ResponseEntity<?> createAuthenticationToken(@Valid @RequestBody AuthenticationRequest authenticationRequest, HttpServletResponse response ) throws Exception {
 
