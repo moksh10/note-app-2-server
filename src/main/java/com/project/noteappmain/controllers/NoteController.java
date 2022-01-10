@@ -24,7 +24,7 @@ import com.project.noteappmain.services.NoteServiceImpl;
 
 @RestController
 @RequestMapping(path = "/notes")
-@CrossOrigin(origins = "http://localhost:3000",allowCredentials = "true")
+@CrossOrigin(origins = "https://note-dusk.web.app/",allowCredentials = "true")
 public class NoteController {
 	
 	@Autowired

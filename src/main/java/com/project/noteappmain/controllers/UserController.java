@@ -23,7 +23,7 @@ import com.project.noteappmain.services.UserServiceImpl;
 
 @RestController
 @RequestMapping(path = "/noteuser")
-@CrossOrigin(origins = "http://localhost:3000",allowCredentials = "true")
+@CrossOrigin(origins = "https://note-dusk.web.app/",allowCredentials = "true")
 public class UserController {
 	
 	@Autowired
